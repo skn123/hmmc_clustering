@@ -24,6 +24,7 @@ SET (CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
 
 set(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} /opt/local/lib)
 
+#The following two lines will use mvapich2 on hodor
 set (MPI_COMPILER "/opt/mvapich2-x/gnu/bin/mpic++")
 set (MPI_INCLUDE_PATH "/opt/mvapich2-x/gnu/include")
 
