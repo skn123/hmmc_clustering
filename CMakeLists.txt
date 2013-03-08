@@ -24,13 +24,15 @@ SET (CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
 
 set(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} /opt/local/lib)
 
+set (MPI_COMPILER "/opt/mvapich2-x/gnu/bin/mpic++")
+set (MPI_INCLUDE_PATH "/opt/mvapich2-x/gnu/include")
+
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/tao/undvc_common/cmake/Modules/")
 
 find_package(MPI REQUIRED)
 set (CMAKE_CXX_COMPILE_FLAGS ${CMAKE_COMPILE_FLAGS} ${MPI_COMPILE_FLAGS})
-#set (CMAKE_CXX_LINK_FLAGS ${CMAKE_CXX_LINK_FLAGS} ${MPI_LINK_FLAGS})
-include_directories(MPI_INCLUDE_PATH)
-#link_directories(MPI_LINK_PATH)
+set (CMAKE_CXX_LINK_FLAGS ${CMAKE_CXX_LINK_FLAGS} ${MPI_LINK_FLAGS})
+include_directories(${MPI_INCLUDE_PATH})
 
 find_package(Boost REQUIRED COMPONENTS system filesystem)
 
