@@ -1,0 +1,9 @@
+#PBS -S /bin/bash
+#PBS -N hmmc_genetic_algorithm 
+#PBS -o ~/hmmc_out.txt
+#PBS -e ~/hmmc_error.txt
+#PBS -m abe
+#PBS -M tdesell@cs.und.edu
+#PBS -l nodes=2:ppn=8,walltime=0:10:00,naccesspolicy=singlenode
+cd ~/hmmc_clustering/build
+/opt/mvapich2-x/gnu/bin/mpiexec -machinefile $PBS_NODEFILE -np 16 ./hmmc --n_groups 3 --input_file ../data/AST79.csv
