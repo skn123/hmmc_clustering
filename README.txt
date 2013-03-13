@@ -11,13 +11,14 @@ step 1:
 
 	https://help.github.com/articles/generating-ssh-keys
 
-	you should already have one in .ssh/id_rsa.pub you can add this to your
-	git account under account settings.
+	you should already have one in .ssh/id_rsa.pub (you don't need to
+    generate a new one). You can add this to your git account under 
+    account settings.
 
 step 2:
 	add cmake to your .bashrc
 
-	alias cmake=/share/apps/usrcmake/bin/cmake ..
+	alias cmake=/share/apps/usrcmake/bin/cmake
 
 	log out and log back in
 

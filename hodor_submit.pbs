@@ -1,9 +1,12 @@
 #PBS -S /bin/bash
-#PBS -N hmmc_genetic_algorithm 
-#PBS -o ~/hmmc_out.txt
-#PBS -e ~/hmmc_error.txt
-#PBS -m abe
+#PBS -N hmmc_ga
+#PBS -l nodes=04:ppn=8,walltime=3:00:00,naccesspolicy=singlejob
+#PBS -o /home/travis.desell/hmmc_runs2/04_node/hmmc_out_job_$PBS_JOBID.txt
+#PBS -e /home/travis.desell/hmmc_runs2/04_node/hmmc_error_job_$PBS_JOBID.txt
+###PBS -m abe
 #PBS -M tdesell@cs.und.edu
-#PBS -l nodes=2:ppn=8,walltime=0:10:00,naccesspolicy=singlenode
+###PBS -q priority
+#PBS -l qos=priority
+env | grep PBS
 cd ~/hmmc_clustering/build
-/opt/mvapich2-x/gnu/bin/mpiexec -machinefile $PBS_NODEFILE -np 16 ./hmmc --n_groups 3 --input_file ../data/AST79.csv
+/opt/mvapich2-x/gnu/bin/mpiexec -machinefile ~/hodor_nodes_mvapich -np $PBS_NP ./hmmc --n_groups 3 --input_file ../data/AST79.csv --maximum_reported 50000 --population_size 200
