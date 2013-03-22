@@ -6,40 +6,49 @@ Project for clustering cancer patients based on hidden markov models.
 
 Compilation instructions:
 
-step 1:
-	generate an SSH key for github:
+Step 1: Make a github account.
 
-	https://help.github.com/articles/generating-ssh-keys
+Step 2: Go to your github account settings and add your PUBLIC ssh key:
 
-	you should already have one in .ssh/id_rsa.pub you can add this to your
-	git account under account settings.
+https://github.com/settings/ssh
 
-step 2:
+This can be found in:
+
+~/.ssh/id_rsa.pub
+
+On hodor.
+
+Step 3: Clone the repository:
+
+git clone ssh://git@github.com/travisdesell/tomography.git
+
+Step 4: Check out the submodules:
+
+    cd tomography
+    git submodule init
+    git submodule update
+    git checkout master
+    cd tao
+    git submodule init
+    git submodule update
+    git checkout master
+
+step 5:
 	add cmake to your .bashrc
 
 	alias cmake=/share/apps/usrcmake/bin/cmake ..
 
 	log out and log back in
 
-step 3:
-	clone and build the repository:
-	git clone ssh://git@github.com/travisdesell/hmmc_clustering.git
+Step 6: Compile:
 
-	cd hmmc_clustering
-	git submodule init
-	git submodule update
-	git checkout master
-	cd tao
-	git submodule init
-	git submodule update
-	git checkout master
+    cd..
+    cd ..
+    mkdir build
+    cd build
+    make
 
-	cd ..
-	mkdir build
-	cd build
-	make
-
-step 4:
+step 7:
 	Run:
 
 	For two processes (master/worker) for testing:
