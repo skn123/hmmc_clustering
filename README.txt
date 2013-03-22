@@ -3,15 +3,11 @@ hmmc_clustering
 
 Project for clustering cancer patients based on hidden markov models.
 
-
 Compilation instructions:
 
 Step 1: Make a github account.
 
 Step 2: Go to your github account settings and add your PUBLIC ssh key:
-
-https://github.com/settings/ssh
-
 This can be found in:
 
 ~/.ssh/id_rsa.pub
@@ -36,7 +32,7 @@ Step 4: Check out the submodules:
 step 5:
 	add cmake to your .bashrc
 
-	alias cmake=/share/apps/usrcmake/bin/cmake ..
+	alias cmake=/share/apps/usrcmake/bin/cmake
 
 	log out and log back in
 
