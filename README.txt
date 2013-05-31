@@ -16,11 +16,11 @@ On hodor.
 
 Step 3: Clone the repository:
 
-git clone ssh://git@github.com/travisdesell/tomography.git
+git clone ssh://git@github.com/travisdesell/hmmc_clustering.git
 
 Step 4: Check out the submodules:
 
-    cd tomography
+    cd hmmc_clustering
     git submodule init
     git submodule update
     git checkout master
