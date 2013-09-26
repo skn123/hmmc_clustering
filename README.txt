@@ -38,10 +38,10 @@ step 5:
 
 Step 6: Compile:
 
-    cd..
     cd ..
     mkdir build
     cd build
+    cmake ..
     make
 
 step 7:
